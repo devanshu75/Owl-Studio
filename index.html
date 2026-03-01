@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QH9R0EH7WG"></script>
+        <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QH9R0EH7WG');
+        </script>
+        <!-- Basic Meta -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Primary SEO -->
+        <title>Owl Studio | Strategic Branding & Digital Growth Agency</title>
+        <meta name="description" content="Owl Studio is a strategic branding and digital growth agency specializing in brand strategy, brand design, and digital branding. We help ambitious businesses build powerful identities, scalable websites, and high-impact marketing experiences.">
+        <meta name="keywords" content="branding agency, brand strategy, brand design, digital branding, website development, digital marketing agency, creative studio">
+        <meta name="author" content="Owl Studio">
+        <meta name="robots" content="index, follow">
+        <!-- Theme Color -->
+        <meta name="theme-color" content="#0f1115">
+        <!-- Open Graph (Facebook / LinkedIn) -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Owl Studio | Strategic Branding & Digital Growth Agency">
+        <meta property="og:description" content="We build bold brands and scalable digital experiences through strategy, design, and innovation.">
+        <meta property="og:image" content="https://owlstudio.media/assets/images/og-image.jpg">
+        <meta property="og:url" content="https://owlstudio.media">
+        <meta property="og:site_name" content="Owl Studio">
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Owl Studio | Strategic Branding & Digital Growth Agency">
+        <meta name="twitter:description" content="Brand strategy, brand design, and digital branding for ambitious businesses.">
+        <meta name="twitter:image" content="https://owlstudio.media/assets/images/og-image.jpg">
+        <!-- Favicon -->
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="assets/images/favicon-32.png"
+        >
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="assets/images/favicon-16.png"
+        >
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+        <!-- Styles -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body class="bg-primary text-white font-sans">
+        <!-- ================= LOADER ================= -->
+        <div id="loader" class="loader">
+            <div class="loader-inner">
+                <h1 class="loader-title">OWL.STUDIO</h1>
+                <div class="loader-line"></div>
+            </div>
+        </div>
+        <nav class="navbar" id="navbar">
+            <div class="nav-left">
+                <button id="menuToggle" class="menu-btn">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+            <div class="nav-logo">
+                <img src="./assets/images/logo.svg" alt="Logo">
+            </div>
+            <div class="nav-right">
+                <a href="#services" class="hidden lg:block">Services</a>
+                <a href="#ourwork" class="hidden lg:block">Our Work</a>
+                <a href="#contact" class="contact-btn">Contact</a>
+            </div>
+        </nav>
+        <div id="menuOverlay" class="overlay"></div>
+        <div id="sideMenu" class="side-menu">
+            <ul>
+                <li>
+                    <a href="#" class="menu-link">Home</a>
+                </li>
+                <li>
+                    <a href="#" class="menu-link">About</a>
+                </li>
+                <li>
+                    <a href="#" class="menu-link">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#" class="menu-link">Careers</a>
+                </li>
+            </ul>
+        </div>
+        <!-- ================= HERO ================= -->
+        <section class="hero-section relative min-h-screen w-full overflow-hidden">
+            <!-- Background Video Wrapper -->
+            <div class="hero-bg absolute inset-0">
+                <video
+                    class="hero-video w-full h-full object-cover"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                >
+                    <source src="./assets/video/hero-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <!-- Overlay -->
+            <div class="hero-overlay absolute inset-0 
+    bg-gradient-to-b 
+    from-black/75 
+    via-black/65 
+    to-black/80"></div>
+            <!-- Content -->
+            <div class="hero-content relative z-10 text-center px-6 pt-56 md:pt-64">
+                <h1 class="hero-title
+         text-[34px]
+         sm:text-[52px]
+         md:text-[72px]
+         lg:text-[100px]
+         xl:text-[120px]
+         2xl:text-[140px]
+         leading-[0.9]
+         tracking-[-1px] md:tracking-[-2px]" id="heroTitle">
+                    OWL.STUDIO
+                </h1>
+                <!-- TAGLINE -->
+                <div class="hero-tagline mt-8 text-white text-lg md:text-xl">
+                    <p>Brands that think differently</p>
+                    <p class="mt-1">move people.</p>
+                    <div class="mt-6 flex justify-center">
+                        <div class="scroll-btn" id="scrollToServices">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-description mt-15 px-6">
+                    <div class="hero mt-15 px-6">
+                        <div class="max-w-[1050px] mx-auto text-center">
+                            <h2 class="font-light text-white 
+leading-[1.3] sm:leading-[1.25] md:leading-[1.15]
+text-[22px] sm:text-3xl md:text-4xl lg:text-5xl
+tracking-[-0.01em] sm:tracking-[-0.02em]
+max-w-[90%] sm:max-w-[800px] mx-auto">
+                                We are strategic brand consultancy
+                                <span class="premium-highlight">
+                                    specializing in brand development, design, and digital
+                                </span>
+                                communication.
+                            </h2>
+                            <p class="hero-para text-white/60 my-8 max-w-[750px] mx-auto text-sm md:text-base">
+                                We combine strategy, design, and digital innovation to create meaningful brand experiences that inspire trust, increase visibility, and position businesses for sustainable growth.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ================= OUR FOCUS ================= -->
+            <section class="focus-section  py-16 md:py-20 lg:py-24">
+                <h2 class="section_title ">Our Focus</h2>
+                <div class="focus-wrapper">
+                    <div class="swiper focus-slider">
+                        <div class="swiper-wrapper">
+                            <!-- CARD 1 -->
+                            <div class="swiper-slide">
+                                <div class="focus-card">
+                                    <div class="focus-icon">
+                                        <svg viewBox="0 0 100 100">
+                                            <rect
+                                                x="15"
+                                                y="15"
+                                                width="70"
+                                                height="70"
+                                            />
+                                            <circle cx="50" cy="50" r="22"/>
+                                            <circle
+                                                cx="50"
+                                                cy="50"
+                                                r="5"
+                                                class="accent"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <h3>Brand Strategy</h3>
+                                    <p>
+                                        We define positioning, purpose, and messaging frameworks
+              that give your brand clarity and competitive advantage.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- CARD 2 -->
+                            <div class="swiper-slide">
+                                <div class="focus-card">
+                                    <div class="focus-icon">
+                                        <svg viewBox="0 0 100 100">
+                                            <rect
+                                                x="25"
+                                                y="25"
+                                                width="50"
+                                                height="50"
+                                            />
+                                            <rect
+                                                x="35"
+                                                y="35"
+                                                width="50"
+                                                height="50"
+                                            />
+                                            <circle
+                                                cx="80"
+                                                cy="20"
+                                                r="5"
+                                                class="accent"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <h3>Brand Design</h3>
+                                    <p>
+                                        Distinctive visual systems, identity design, and brand
+              guidelines that create strong recognition and trust.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- CARD 3 -->
+                            <div class="swiper-slide">
+                                <div class="focus-card">
+                                    <div class="focus-icon">
+                                        <svg viewBox="0 0 100 100">
+                                            <polyline points="20,70 40,50 60,60 80,30"/>
+                                            <circle
+                                                cx="80"
+                                                cy="30"
+                                                r="5"
+                                                class="accent"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <h3>Digital Branding</h3>
+                                    <p>
+                                        We extend your brand into digital ecosystems through
+              websites, campaigns, and scalable online experiences.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pagination -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- ================= SERVICES ================= -->
+            <section class="services py-16 md:py-20 lg:py-24" id="services">
+                <h2 class="section_title ">Services</h2>
+                <div class="services-container">
+                    <div class="service left">
+                        <div class="content">
+                            <h3>Website Development</h3>
+                            <p>
+                                We build fast, SEO-optimized websites designed to attract traffic and convert visitors into qualified leads.
+Every project is crafted for performance, scalability, and measurable business growth.
+                            </p>
+                            <div class="btn-wrap">
+                                <span class="btn-label">More..</span>
+                                <span class="btn-circle">
+                                    <img src="./assets/images/Arrow up-right.svg" alt="" srcset="">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service right">
+                        <div class="content">
+                            <h3>Graphic Design</h3>
+                            <p>Creative visual designs that strengthen brand identity and capture audience attention. We craft impactful graphics that communicate clearly and leave a lasting impression.</p>
+                            <div class="btn-wrap">
+                                <span class="btn-label">More..</span>
+                                <span class="btn-circle">
+                                    <img src="./assets/images/Arrow up-right.svg" alt="" srcset="">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service left">
+                        <div class="content">
+                            <h3>UI/UX Design</h3>
+                            <p>
+                                We design intuitive, user-centered interfaces that enhance engagement and improve conversion rates.
+Every experience is crafted to align with your brand and business goals.
+                            </p>
+                            <div class="btn-wrap">
+                                <span class="btn-label">More..</span>
+                                <span class="btn-circle">
+                                    <img src="./assets/images/Arrow up-right.svg" alt="" srcset="">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service right">
+                        <div class="content">
+                            <h3>Digital Marketing</h3>
+                            <p>Strategic digital marketing solutions that connect your brand with the right audience. Built to maximize reach, engagement, and long-term business growth.</p>
+                            <div class="btn-wrap">
+                                <span class="btn-label">More..</span>
+                                <span class="btn-circle">
+                                    <img src="./assets/images/Arrow up-right.svg" alt="" srcset="">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ================= OUR WORK ================= -->
+            <section id="ourwork" class="bg-tertiary py-16 md:py-20 lg:py-24">
+                <div class="max-w-6xl mx-auto px-6">
+                    <!-- Heading -->
+                    <h2 class="section_title">
+                        Our Work
+                    </h2>
+                    <!-- ===== ROW 1 ===== -->
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <!-- LEFT BLUE CARD -->
+                        <div class="relative rounded-2xl p-14 
+                  bg-gradient-to-br from-[#0c2a78] to-[#041a4a]
+                  border border-white/10">
+                            <h3 class="text-3xl font-medium text-white mb-6">
+                                Company Name
+                            </h3>
+                            <p class="text-gray-300 text-lg leading-relaxed mb-8 max-w-md">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Sed do eiusmod
+                            </p>
+                            <div class="btn-wrap">
+                                <span class="btn-label">More..</span>
+                                <span class="btn-circle">
+                                    <img src="./assets/images/Arrow up-right.svg" alt="" srcset="">
+                                </span>
+                            </div>
+                        </div>
+                        <!-- RIGHT BLUE IMAGE CARD -->
+                        <div class="rounded-2xl p-5 
+                  bg-gradient-to-br from-[#0c2a78] to-[#041a4a]
+                  border border-white/10">
+                            <!-- Main Image -->
+                            <div class="relative rounded-xl overflow-hidden mb-6">
+                                <img src="https://picsum.photos/900/500?random=1" class="w-full h-64 object-cover">
+                                <!-- Blue Overlay -->
+                                <div class="absolute inset-0 bg-blue-900/60"></div>
+                            </div>
+                            <!-- Thumbnails -->
+                            <div class="grid grid-cols-3 gap-4">
+                                <div class="relative rounded-lg overflow-hidden">
+                                    <img src="https://picsum.photos/300/200?random=2" class="w-full h-24 object-cover">
+                                    <div class="absolute inset-0 bg-blue-900/60"></div>
+                                </div>
+                                <div class="relative rounded-lg overflow-hidden">
+                                    <img src="https://picsum.photos/300/200?random=3" class="w-full h-24 object-cover">
+                                    <div class="absolute inset-0 bg-blue-900/60"></div>
+                                </div>
+                                <div class="relative rounded-lg overflow-hidden">
+                                    <img src="https://picsum.photos/300/200?random=4" class="w-full h-24 object-cover">
+                                    <div class="absolute inset-0 bg-blue-900/60"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ===== ROW 2 ===== -->
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- LEFT RED CARD -->
+                        <div class="relative rounded-2xl p-14 
+                  bg-gradient-to-br from-[#b30000] to-[#5e0000]
+                  border border-white/10">
+                            <h3 class="text-3xl font-medium text-white mb-6">
+                                Company Name
+                            </h3>
+                            <p class="text-gray-300 text-lg leading-relaxed mb-8 max-w-md">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Sed do eiusmod
+                            </p>
+                            <div class="btn-wrap">
+                                <span class="btn-label">More..</span>
+                                <span class="btn-circle">
+                                    <img src="./assets/images/Arrow up-right.svg" alt="" srcset="">
+                                </span>
+                            </div>
+                        </div>
+                        <!-- RIGHT RED IMAGE CARD -->
+                        <div class="rounded-2xl p-5 
+                  bg-gradient-to-br from-[#b30000] to-[#5e0000]
+                  border border-white/10">
+                            <!-- Main Image -->
+                            <div class="relative rounded-xl overflow-hidden mb-6">
+                                <img src="https://picsum.photos/900/500?random=5" class="w-full h-64 object-cover">
+                                <!-- Red Overlay -->
+                                <div class="absolute inset-0 bg-red-900/60"></div>
+                            </div>
+                            <!-- Thumbnails -->
+                            <div class="grid grid-cols-3 gap-4">
+                                <div class="relative rounded-lg overflow-hidden">
+                                    <img src="https://picsum.photos/300/200?random=6" class="w-full h-24 object-cover">
+                                    <div class="absolute inset-0 bg-red-900/60"></div>
+                                </div>
+                                <div class="relative rounded-lg overflow-hidden">
+                                    <img src="https://picsum.photos/300/200?random=7" class="w-full h-24 object-cover">
+                                    <div class="absolute inset-0 bg-red-900/60"></div>
+                                </div>
+                                <div class="relative rounded-lg overflow-hidden">
+                                    <img src="https://picsum.photos/300/200?random=8" class="w-full h-24 object-cover">
+                                    <div class="absolute inset-0 bg-red-900/60"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ================= CONTACT ================= -->
+            <section id="contact" class="relative bg-secondary py-16 md:py-20 lg:py-24">
+                <div class="max-w-6xl mx-auto px-6 py-20">
+                    <!-- Heading -->
+                    <h2 class="section_title">
+                        Contact
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-16 items-center">
+                        <!-- LEFT CONTENT -->
+                        <div class="text-gray-300">
+                            <h3 class="text-3xl text-white font-medium mb-6">
+                                Let's join forces
+                            </h3>
+                            <p class="text-lg text-gray-400 max-w-sm leading-relaxed">
+                                As long as there's room to turn things up a notch, we're in.
+                            </p>
+                        </div>
+                        <!-- RIGHT FORM CARD -->
+                        <div class="bg-card
+            border border-white/10 rounded-2xl p-10 
+            w-full max-w-md mx-auto backdrop-blur-xl">
+                            <form
+                                id="contactForm"
+                                action="https://formsubmit.co/e56396ac2ab75a1416d07965e3274593"
+                                method="POST"
+                                class="space-y-6"
+                            >
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_template" value="table">
+                                <!-- Name -->
+                                <div class="relative">
+                                    <i class="fa-solid fa-user absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        placeholder="Name"
+                                        required
+                                        class="w-full pl-12 pr-5 py-3 
+                       bg-[#1f232b] text-white 
+                       rounded-xl border border-white/10
+                       accent-focus
+                       outline-none transition-all duration-300"
+                                    >
+                                </div>
+                                <!-- Email -->
+                                <div class="relative">
+                                    <i class="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        placeholder="Email"
+                                        required
+                                        class="w-full pl-12 pr-5 py-3 
+                       bg-[#1f232b] text-white 
+                       rounded-xl border border-white/10
+                       accent-focus
+                       outline-none transition-all duration-300"
+                                    >
+                                </div>
+                                <!-- Phone -->
+                                <div class="relative">
+                                    <i class="fa-solid fa-phone absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        placeholder="Phone Number"
+                                        required
+                                        pattern="[0-9]{10}"
+                                        title="Enter a valid 10-digit phone number"
+                                        class="w-full pl-12 pr-5 py-3 
+                       bg-[#1f232b] text-white 
+                       rounded-xl border border-white/10
+                       accent-focus
+                       outline-none transition-all duration-300"
+                                    >
+                                </div>
+                                <!-- Service -->
+                                <div class="relative">
+                                    <i class="fa-solid fa-briefcase absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                                    <select name="service" required class="w-full pl-12 pr-5 py-3 
+                       bg-[#1f232b] text-white 
+                       rounded-xl border border-white/10
+                       accent-focus
+                       outline-none appearance-none transition-all duration-300">
+                                        <option value="">Select Service</option>
+                                        <option>Website Design</option>
+                                        <option>UI/UX Design</option>
+                                        <option>Branding</option>
+                                        <option>SEO</option>
+                                    </select>
+                                </div>
+                                <!-- Message -->
+                                <div class="relative">
+                                    <i class="fa-solid fa-comment-dots absolute left-4 top-4 text-gray-400"></i>
+                                    <textarea
+                                        name="message"
+                                        rows="4"
+                                        required
+                                        placeholder="Tell us about your project..."
+                                        class="w-full pl-12 pr-5 py-3 
+                       bg-[#1f232b] text-white 
+                       rounded-xl border border-white/10
+                       accent-focus
+                       outline-none resize-none transition-all duration-300"
+                                    ></textarea>
+                                </div>
+                                <!-- Submit -->
+                                <button type="submit" class="w-full bg-black text-white 
+                   py-3 rounded-xl font-medium
+                   flex items-center justify-center gap-2
+                   hover:bg-[#A3FF00] hover:text-black
+                   transition-all duration-300">
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                    Submit
+                                </button>
+                                <!-- Success -->
+                                <p id="formSuccess" class="text-green-400 text-sm hidden flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    Message sent successfully! We'll contact you soon.
+                                </p>
+                                <!-- Error -->
+                                <p id="formError" class="text-red-400 text-sm hidden flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-xmark"></i>
+                                    Something went wrong. Please try again.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="footer-bg relative bg-[#0f1115] text-white overflow-hidden">
+                <!-- Content -->
+                <div class="relative max-w-6xl mx-auto px-6 py-20">
+                    <div class="grid md:grid-cols-3 gap-12 items-start text-center md:text-left">
+                        <!-- LEFT -->
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3">
+                                Owl Developers
+                            </h3>
+                            <p class="text-gray-400 max-w-xs mx-auto md:mx-0">
+                                We build fast, smart & scalable digital experiences.
+                            </p>
+                        </div>
+                        <!-- CENTER -->
+                        <div class="flex flex-col gap-3 text-gray-300">
+                            <a href="#" class="hover:text-white transition">
+                                Services
+                            </a>
+                            <a href="#" class="hover:text-white transition">
+                                Our work
+                            </a>
+                        </div>
+                        <!-- RIGHT -->
+                        <div class="text-center md:text-left">
+                            <h3 class="text-xl font-semibold mb-4">
+                                Get in Touch :
+                            </h3>
+                            <p class="mb-3 flex items-center 
+              justify-center md:justify-start 
+              gap-3">
+                                <i class="fa-solid fa-envelope text-lime-400"></i>
+                                <a href="mailto:info@owlstudio.media" class="hover:text-white transition">
+                                    info@owlstudio.media
+                                </a>
+                            </p>
+                            <p class="mb-3 flex items-center 
+              justify-center md:justify-start 
+              gap-3">
+                                <i class="fa-solid fa-phone text-lime-400"></i>
+                                <a href="tel:+918806408608" class="hover:text-white transition duration-300">
+                                    +91 8806408608
+                                </a>
+                            </p>
+                            <!-- Social Icons -->
+                            <div class="flex justify-center md:justify-start gap-5 text-xl mt-4">
+                                <a href="#" class="hover:text-blue-400 transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="hover:text-blue-400 transition">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- FontAwesome CDN -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+            <!--Swiper CDN-->
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <script src="./assets/js/main.js"></script>
+            <div class="cursor-dot"></div>
+            <div class="cursor-ring"></div>
+        </body>
+    </html>
