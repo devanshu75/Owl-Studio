@@ -180,4 +180,6 @@ window.addEventListener("load", function () {
   }, 1200); // Adjust timing if needed
 });
 
+// ============ Hero Text Animation =============
+
 

@@ -608,5 +608,14 @@ Every experience is crafted to align with your brand and business goals.
             <script src="./assets/js/main.js"></script>
             <div class="cursor-dot"></div>
             <div class="cursor-ring"></div>
+            <script>
+const heroTitle = document.getElementById("heroTitle");
+
+document.addEventListener("mousemove", function(e){
+  const x = (window.innerWidth/2 - e.clientX)/60;
+  const y = (window.innerHeight/2 - e.clientY)/60;
+  heroTitle.style.transform = `translate(${x}px, ${y}px)`;
+});
+</script>
         </body>
     </html>
