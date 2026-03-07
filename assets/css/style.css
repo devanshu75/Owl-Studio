@@ -119,6 +119,317 @@ html {
   letter-spacing: -1px;
   margin-bottom: clamp(40px, 6vw, 80px);
 }
+
+/* =========================
+HAMBURGER BUTTON
+========================= */
+
+.menu-toggle {
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* bars */
+
+.menu-toggle span {
+  position: absolute;
+  width: 22px;
+  height: 2px;
+  background: #fff;
+
+  transition:
+    transform 0.35s cubic-bezier(0.77, 0, 0.175, 1),
+    opacity 0.25s ease;
+}
+
+.menu-toggle span:nth-child(1) {
+  transform: translateY(-6px);
+}
+
+.menu-toggle span:nth-child(3) {
+  transform: translateY(6px);
+}
+
+/* close icon */
+
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(0) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(0) rotate(-45deg);
+}
+
+.menu-toggle.active {
+  background: #111;
+}
+
+/* =========================
+MENU OVERLAY
+========================= */
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: #000;
+
+  clip-path: circle(0% at 40px 40px);
+  transition: clip-path 0.9s cubic-bezier(0.77, 0, 0.175, 1);
+
+  z-index: 9000;
+}
+
+.menu-overlay.active {
+  clip-path: circle(150% at 40px 40px);
+}
+
+/* =========================
+MENU CLOSE BUTTON
+========================= */
+
+.menu-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+
+  width: 50px;
+  height: 50px;
+  background: var(--accent);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* X icon */
+
+.menu-close span {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: #000;
+}
+
+.menu-close span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.menu-close span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+
+/* =========================
+MENU LAYOUT
+========================= */
+
+.menu-wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: center;
+  padding: 40px 1vw;
+  gap: 80px;
+}
+
+/* =========================
+LEFT MENU
+========================= */
+
+.menu {
+  position: relative;
+  padding-left: 120px;
+}
+
+.menu ul {
+  list-style: none;
+}
+
+.menu li {
+  position: relative;
+
+  font-size: clamp(64px, 7vw, 120px);
+  font-weight: 900;
+
+  line-height: 1.05;
+  letter-spacing: -2px;
+
+  margin-bottom: 10px;
+}
+
+/* index numbers */
+
+.menu li::before {
+  content: attr(data-index);
+
+  position: absolute;
+  left: -70px;
+  top: 20px;
+
+  font-size: 14px;
+  letter-spacing: 2px;
+
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* =========================
+MENU LINKS
+========================= */
+
+.menu a {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+
+.text-base {
+  color: #555;
+  transition: 0.35s ease;
+}
+
+/* hover fade like baunfire */
+
+.menu:hover a {
+  opacity: 0.2;
+}
+
+.menu a:hover {
+  opacity: 1 !important;
+}
+
+.menu a:hover .text-base {
+  color: #fff;
+}
+
+/* hover spotlight circle */
+
+.menu a::after {
+  content: "";
+
+  position: absolute;
+  left: -30px;
+  top: 50%;
+
+  width: 70px;
+  height: 70px;
+
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+
+  transform: translateY(-50%) scale(0.6);
+  opacity: 0;
+
+  transition: 0.35s ease;
+}
+
+.menu a:hover::after {
+  transform: translateY(-50%) scale(1);
+  opacity: 1;
+}
+
+/* =========================
+RIGHT CONTACT COLUMN
+========================= */
+
+.menu-address {
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 16px;
+  line-height: 1.7;
+
+  max-width: 340px;
+}
+
+.menu-address h4 {
+  color: #fff;
+  font-size: 13px;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  margin-bottom: 12px;
+  margin-top: 26px;
+}
+
+.menu-address p {
+  margin-bottom: 8px;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+  .menu-wrapper {
+    grid-template-columns: 1fr;
+    gap: 70px;
+    padding: 120px 8vw;
+  }
+
+  .menu {
+    padding-left: 90px;
+  }
+
+  .menu li {
+    font-size: clamp(48px, 9vw, 90px);
+  }
+
+  .menu li::before {
+    left: -50px;
+  }
+
+  .menu-address {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .menu-wrapper {
+    padding: 100px 7vw;
+  }
+
+  .menu {
+    padding-left: 70px;
+  }
+
+  .menu li {
+    font-size: clamp(36px, 10vw, 60px);
+  }
+
+  .menu li::before {
+    left: -40px;
+  }
+
+  .menu a::after {
+    width: 50px;
+    height: 50px;
+  }
+}
+
 /* ================= HERO ================= */
 
 .hero-title {
@@ -1011,8 +1322,7 @@ body {
     var(--bg-tertiary);
 }
 
-
-#heroTitle{
-transition: transform 0.2s ease-out;
-will-change: transform;
+#heroTitle {
+  transition: transform 0.2s ease-out;
+  will-change: transform;
 }

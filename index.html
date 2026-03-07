@@ -51,6 +51,7 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body class="bg-primary text-white font-sans">
@@ -63,37 +64,49 @@
         </div>
         <nav class="navbar" id="navbar">
             <div class="nav-left">
-                <button id="menuToggle" class="menu-btn">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+                <button class="menu-toggle" id="menuToggle" aria-label="Open Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
             <div class="nav-logo">
                 <img src="./assets/images/logo.svg" alt="Logo">
             </div>
             <div class="nav-right">
-                <a href="#services" class="hidden lg:block">Services</a>
-                <a href="#ourwork" class="hidden lg:block">Our Work</a>
+                <a href="#">Services</a>
+                <a href="#ourwork">Our Work</a>
                 <a href="#contact" class="contact-btn">Contact</a>
             </div>
         </nav>
-        <div id="menuOverlay" class="overlay"></div>
-        <div id="sideMenu" class="side-menu">
-            <ul>
-                <li>
-                    <a href="#" class="menu-link">Home</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-link">About</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-link">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#" class="menu-link">Careers</a>
-                </li>
-            </ul>
+        <div class="menu-overlay" id="menuOverlay">
+            <button class="menu-close" id="menuClose">
+                <span></span>
+                <span></span>
+            </button>
+            <div class="menu-wrapper">
+                <nav class="menu">
+                    <ul>
+                        <li data-index="01">
+                            <a href="#">Work</a>
+                        </li>
+                        <li data-index="02">
+                            <a href="#services">Services</a>
+                        </li>
+                        <li data-index="03">
+                            <a href="#">About</a>
+                        </li>
+                        <li data-index="04">
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="menu-address">
+                    <h4>Contact</h4>
+                    <p>nfo@owlstudio.media</p>
+                    <p>+91 8806408608</p>
+                </div>
+            </div>
         </div>
         <!-- ================= HERO ================= -->
         <section class="hero-section relative min-h-screen w-full overflow-hidden">
@@ -605,6 +618,7 @@ Every experience is crafted to align with your brand and business goals.
             <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
             <!--Swiper CDN-->
             <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
             <script src="./assets/js/main.js"></script>
             <div class="cursor-dot"></div>
             <div class="cursor-ring"></div>
@@ -616,6 +630,6 @@ document.addEventListener("mousemove", function(e){
   const y = (window.innerHeight/2 - e.clientY)/60;
   heroTitle.style.transform = `translate(${x}px, ${y}px)`;
 });
-</script>
+            </script>
         </body>
     </html>

@@ -1,33 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
   /* ================= MENU ================= */
+  const toggle = document.querySelector(".menu-toggle");
+  const overlay = document.querySelector(".menu-overlay");
+  const items = document.querySelectorAll(".menu li");
 
-  const menu = document.getElementById("sideMenu");
-  const toggle = document.getElementById("menuToggle");
-  const body = document.body;
+  const tl = gsap.timeline({ paused: true });
 
-  function openMenu() {
-    menu.classList.add("active");
-    body.classList.add("menu-open");
-  }
-
-  function closeMenu() {
-    menu.classList.remove("active");
-    body.classList.remove("menu-open");
-  }
-
-  toggle?.addEventListener("click", function (e) {
-    e.stopPropagation();
-    menu.classList.contains("active") ? closeMenu() : openMenu();
+  tl.from(items, {
+    y: 80,
+    opacity: 0,
+    stagger: 0.08,
+    duration: 0.7,
+    ease: "power3.out",
   });
 
-  document.addEventListener("click", function (e) {
-    if (menu?.classList.contains("active") && !menu.contains(e.target)) {
-      closeMenu();
-    }
+  toggle.addEventListener("click", () => {
+    toggle.classList.toggle("active");
+    overlay.classList.toggle("active");
+
+    overlay.classList.contains("active") ? tl.play() : tl.reverse();
   });
 
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeMenu();
+  const closeBtn = document.getElementById("menuClose");
+
+  closeBtn.addEventListener("click", () => {
+    menuOverlay.classList.remove("active");
+    menuToggle.classList.remove("active");
+    document.body.classList.remove("menu-open");
   });
 
   /* ================= HERO PARALLAX ================= */
@@ -181,5 +180,3 @@ window.addEventListener("load", function () {
 });
 
 // ============ Hero Text Animation =============
-
-
