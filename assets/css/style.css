@@ -242,7 +242,6 @@ MENU CLOSE BUTTON
   transform: rotate(-45deg);
 }
 
-
 /* =========================
 MENU LAYOUT
 ========================= */
@@ -1325,4 +1324,46 @@ body {
 #heroTitle {
   transition: transform 0.2s ease-out;
   will-change: transform;
+}
+
+.footer-title {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: white;
+  margin-bottom: 22px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-links a {
+  color: #94a3b8;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-social {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 14px;
+  transition: 0.25s;
+}
+
+.footer-social:hover {
+  border-color: #a3e635;
+  color: white;
 }
