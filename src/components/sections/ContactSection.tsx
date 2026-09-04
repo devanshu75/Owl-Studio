@@ -47,16 +47,25 @@ export function ContactSection() {
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://formsubmit.co/ajax/e56396ac2ab75a1416d07965e3274593", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `New Owl Studio Lead: ${data.name} (${data.service})`,
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          service: data.service,
+          message: data.message,
+          submittedAt: new Date().toISOString(),
+        }),
       });
 
-      const resData = await response.json();
-
       if (!response.ok) {
-        throw new Error(resData.message || "Failed to submit message");
+        throw new Error("Unable to submit lead. Please try again or email us directly.");
       }
 
       setIsSuccess(true);
