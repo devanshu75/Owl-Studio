@@ -83,6 +83,9 @@ export const metadata: Metadata = {
     ],
     apple: [{ url: "/images/favicon-32.png" }],
   },
+  verification: {
+    google: "Cbnlfl-ysdjib84JDjTCeT8XntYdtXBjCJK8gvXdD9Q",
+  },
 };
 
 export default function RootLayout({
