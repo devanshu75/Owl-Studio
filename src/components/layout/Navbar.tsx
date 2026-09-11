@@ -482,10 +482,10 @@ export function Navbar() {
 
           {/* Right: Monks-Style Action Group (Start Project Pill + Animated Hamburger) */}
           <div className="flex items-center gap-3 sm:gap-4">
-            {/* Primary Action Button */}
+            {/* Primary Action Button (Desktop only, keeping mobile/responsive header clean with just logo and hamburger) */}
             <Link
               href="/contact/"
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-semibold text-brand-dark shadow-owl-sm transition-all duration-300 hover:bg-accent-hover hover:shadow-owl-md hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-dark"
+              className="hidden lg:inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-semibold text-brand-dark shadow-owl-sm transition-all duration-300 hover:bg-accent-hover hover:shadow-owl-md hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-dark"
             >
               <span>Start a project</span>
               <ArrowUpRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
