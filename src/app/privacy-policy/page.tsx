@@ -1,151 +1,141 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Shield, Clock, Mail } from "lucide-react";
-import { SITE_CONFIG } from "@/lib/constants";
+import { Container } from "@/components/layout/Container";
+import { SITE_CONFIG, getCanonicalUrl } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: "Privacy policy and data protection practices of Owl Studio.",
+  title: "Privacy Policy | Owl Studio",
+  description:
+    "Privacy notice and data handling practices for Owl Studio's website and client communication channels.",
+  alternates: {
+    canonical: getCanonicalUrl("/privacy-policy"),
+  },
 };
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="relative min-h-screen bg-primary pt-32 pb-24 text-white">
-      {/* Background ambient lighting */}
-      <div className="pointer-events-none absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-accent/5 blur-[140px] rounded-full" />
-
-      <div className="relative mx-auto max-w-4xl px-6 sm:px-8">
+    <div className="bg-[#F5F3EA] min-h-screen pt-36 pb-24 text-brand-dark">
+      <Container>
         {/* Back Link */}
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-accent hover:text-accent-hover transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-muted hover:text-brand-dark transition-colors mb-8"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to Home
         </Link>
 
         {/* Page Header */}
-        <div className="border-b border-white/10 pb-8 mb-12">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-gray-300 mb-4">
-            <Shield className="h-3.5 w-3.5 text-accent" />
-            Legal Notice &amp; Compliance
+        <div className="border-b border-brand-dark/10 pb-8 mb-12 max-w-4xl">
+          <div className="inline-flex items-center gap-2 rounded-full border border-brand-dark/10 bg-white px-3.5 py-1 text-xs font-mono text-brand-dark mb-4">
+            <Shield className="h-3.5 w-3.5 text-accent-dark" />
+            Compliance &amp; Data Transparency
           </div>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
+          <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-brand-dark uppercase leading-[1.05]">
             Privacy Policy
           </h1>
-          <div className="mt-4 flex items-center gap-2 text-xs sm:text-sm text-textMuted">
-            <Clock className="h-4 w-4" />
-            <span>Last updated: March 12, 2026</span>
+          <div className="mt-4 flex items-center gap-2 text-xs font-mono text-brand-muted">
+            <Clock className="h-3.5 w-3.5 text-accent-dark" />
+            <span>Effective Date: March 10, 2026</span>
           </div>
+        </div>
+
+        {/* Notice to Owner Banner */}
+        <div className="max-w-3xl mb-10 rounded-2xl border border-accent/60 bg-accent/20 p-5 text-xs text-brand-dark">
+          <span className="font-bold uppercase tracking-wider">Note to Business Owner:</span> This policy is drafted to reflect the actual functionality of the Owl Studio website (project brief submissions, communication, and aggregate analytics). Bracketed terms [e.g. jurisdiction] should be reviewed by legal counsel prior to formal corporate registration.
         </div>
 
         {/* Policy Body */}
-        <div className="prose prose-invert max-w-none space-y-10 text-sm sm:text-base text-gray-300 leading-relaxed">
-          <section className="rounded-2xl border border-white/10 bg-surface-card/60 p-6 sm:p-8 backdrop-blur-xl">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
-              1. Overview
+        <div className="max-w-3xl space-y-10 text-sm sm:text-base text-brand-muted leading-relaxed">
+          <section className="rounded-3xl border border-brand-dark/10 bg-white p-8 sm:p-10 shadow-owl-sm">
+            <h2 className="text-xl sm:text-2xl font-black text-brand-dark uppercase tracking-tight mb-4">
+              1. Commitment to Privacy
             </h2>
             <p>
-              This Privacy Notice for <strong>Owl Studio</strong> (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;), describes how and why we might collect, store, use, and share your personal information when you use our services or visit our website at{" "}
-              <a href={SITE_CONFIG.url} className="text-accent underline">
-                {SITE_CONFIG.url}
-              </a>.
-            </p>
-            <p className="mt-3">
-              Reading this privacy notice will help you understand your privacy rights and choices. If you do not agree with our policies and practices, please do not use our Services. If you have questions or concerns, please contact us at{" "}
-              <a href={`mailto:${SITE_CONFIG.contact.email}`} className="text-accent underline">
-                {SITE_CONFIG.contact.email}
-              </a>.
+              Owl Studio (&quot;we&quot;, &quot;our&quot;, or &quot;the studio&quot;) respects the privacy of every client, collaborator, and website visitor. This policy explains what information we collect when you visit <a href={SITE_CONFIG.url} className="text-brand-dark underline font-medium">{SITE_CONFIG.url}</a>, submit a project inquiry, or engage our creative services, and how that information is safeguarded.
             </p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-surface-card/60 p-6 sm:p-8 backdrop-blur-xl">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
+          <section className="rounded-3xl border border-brand-dark/10 bg-white p-8 sm:p-10 shadow-owl-sm">
+            <h2 className="text-xl sm:text-2xl font-black text-brand-dark uppercase tracking-tight mb-4">
               2. Information We Collect
             </h2>
-            <h3 className="text-base sm:text-lg font-semibold text-white mt-4 mb-2">
-              Personal Information You Disclose to Us
-            </h3>
-            <p>
-              We collect personal information that you voluntarily provide to us when you express an interest in obtaining information about us or our services, when you submit our contact form, or when you otherwise contact us.
+            <p className="mb-4">
+              We collect information solely to evaluate project inquiries, communicate proposals, and deliver creative services. We do not sell, rent, or trade personal data to data brokers or third-party advertisers.
             </p>
-            <ul className="list-disc pl-5 mt-3 space-y-2 text-textMuted">
-              <li><strong>Contact Information:</strong> Names, email addresses, phone numbers, and company names.</li>
-              <li><strong>Project Inquiries:</strong> Details regarding your project requirements, scope, budget, and timelines.</li>
-            </ul>
-
-            <h3 className="text-base sm:text-lg font-semibold text-white mt-6 mb-2">
-              Information Automatically Collected
-            </h3>
-            <p>
-              We automatically collect certain information when you visit, use, or navigate the Services. This information does not reveal your specific identity but may include device and usage information, such as your IP address, browser and device characteristics, operating system, language preferences, referring URLs, and device location.
-            </p>
-          </section>
-
-          <section className="rounded-2xl border border-white/10 bg-surface-card/60 p-6 sm:p-8 backdrop-blur-xl">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
-              3. How We Process Your Information
-            </h2>
-            <p>
-              We process your personal information for a variety of reasons, depending on how you interact with our Services, including:
-            </p>
-            <ul className="list-disc pl-5 mt-3 space-y-2 text-textMuted">
-              <li>To respond to user inquiries, project proposals, and provide customer support.</li>
-              <li>To evaluate and improve our Services, marketing, and your experience through privacy-compliant analytics (e.g., Google Analytics 4).</li>
-              <li>To protect our Services, comply with legal requirements, and prevent security vulnerabilities or fraud.</li>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-start gap-2.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent mt-2 shrink-0" />
+                <span><strong className="text-brand-dark">Voluntary Inquiries:</strong> When you complete our contact form, we collect your name, email address, company name, primary service of interest, budget range, and project description.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent mt-2 shrink-0" />
+                <span><strong className="text-brand-dark">Technical &amp; Log Information:</strong> Like most modern websites, our hosting servers automatically record basic technical data such as browser type, operating system, and timestamp solely for performance monitoring and security.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent mt-2 shrink-0" />
+                <span><strong className="text-brand-dark">Aggregate Analytics:</strong> We may utilize privacy-friendly analytics tools to evaluate page engagement in an aggregated, non-personally identifiable format.</span>
+              </li>
             </ul>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-surface-card/60 p-6 sm:p-8 backdrop-blur-xl">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
-              4. Analytics and Tracking Technologies
+          <section className="rounded-3xl border border-brand-dark/10 bg-white p-8 sm:p-10 shadow-owl-sm">
+            <h2 className="text-xl sm:text-2xl font-black text-brand-dark uppercase tracking-tight mb-4">
+              3. How Your Information Is Used
+            </h2>
+            <p className="mb-3">
+              We use collected information strictly to:
+            </p>
+            <ul className="space-y-2 text-sm">
+              <li className="flex items-start gap-2.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent mt-2 shrink-0" />
+                <span>Evaluate your creative project scope and prepare accurate proposals.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent mt-2 shrink-0" />
+                <span>Communicate regarding ongoing client engagements, invoices, and deliverables.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent mt-2 shrink-0" />
+                <span>Maintain website security, prevent fraudulent automated submissions, and ensure operational integrity.</span>
+              </li>
+            </ul>
+          </section>
+
+          <section className="rounded-3xl border border-brand-dark/10 bg-white p-8 sm:p-10 shadow-owl-sm">
+            <h2 className="text-xl sm:text-2xl font-black text-brand-dark uppercase tracking-tight mb-4">
+              4. Data Retention &amp; Security
             </h2>
             <p>
-              We use Google Analytics (measurement ID: <code className="text-accent bg-black/40 px-1.5 py-0.5 rounded">G-QH9R0EH7WG</code>) to analyze website traffic and visitor behavior in an aggregated, non-personally identifiable manner. You can opt out of Google Analytics tracking through Google&apos;s Ads Settings or by using the Google Analytics Opt-out Browser Add-on.
+              Inquiry submissions and client project records are retained only as long as necessary to conduct business, fulfill contractual obligations, or comply with legal accounting mandates. We employ encrypted transmission protocols (HTTPS/SSL) and industry-standard hosting safeguards to protect your communications.
             </p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-surface-card/60 p-6 sm:p-8 backdrop-blur-xl">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
-              5. Data Security &amp; Retention
+          <section className="rounded-3xl border border-brand-dark/10 bg-white p-8 sm:p-10 shadow-owl-sm">
+            <h2 className="text-xl sm:text-2xl font-black text-brand-dark uppercase tracking-tight mb-4">
+              5. Your Rights &amp; Contact Information
             </h2>
-            <p>
-              We have implemented appropriate and reasonable technical and organizational security measures designed to protect the security of any personal information we process. We retain your personal information only for as long as necessary for the purposes set out in this privacy notice, unless a longer retention period is required or permitted by law.
+            <p className="mb-4">
+              Depending on your jurisdiction, you may have the right to request access to, correction of, or deletion of your personal communication records. To exercise these rights or raise inquiries regarding our data practices, please reach out directly:
             </p>
-          </section>
-
-          <section className="rounded-2xl border border-white/10 bg-surface-card/60 p-6 sm:p-8 backdrop-blur-xl">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
-              6. Your Legal Rights
-            </h2>
-            <p>
-              Depending on your geographical location (including the European Economic Area, United Kingdom, United States, and India under applicable data protection laws), you may have the right to request access to, correction of, or deletion of your personal data held by us.
-            </p>
-            <p className="mt-3">
-              To exercise these rights, please contact us at{" "}
-              <a href={`mailto:${SITE_CONFIG.contact.email}`} className="text-accent underline">
-                {SITE_CONFIG.contact.email}
-              </a>.
-            </p>
-          </section>
-
-          <section className="rounded-2xl border border-white/10 bg-surface-card/60 p-6 sm:p-8 backdrop-blur-xl">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
-              7. Contact Us
-            </h2>
-            <p>
-              If you have questions or comments about this policy, you may email us at:
-            </p>
-            <div className="mt-4 flex items-center gap-3 text-white font-medium">
-              <Mail className="h-5 w-5 text-accent" />
-              <span>{SITE_CONFIG.contact.email}</span>
+            <div className="pt-2">
+              <a
+                href={`mailto:${SITE_CONFIG.contact.email}`}
+                className="inline-flex items-center gap-2.5 font-bold text-brand-dark hover:text-accent-dark transition-colors"
+              >
+                <div className="h-9 w-9 rounded-full bg-[#EDEBE3] flex items-center justify-center text-brand-dark">
+                  <Mail className="h-4 w-4 text-brand-dark" />
+                </div>
+                <span>{SITE_CONFIG.contact.email}</span>
+              </a>
+              <div className="text-xs text-brand-muted mt-2">
+                Owl Studio • {SITE_CONFIG.contact.location}
+              </div>
             </div>
-            <p className="mt-2 text-textMuted text-xs sm:text-sm">
-              Owl Studio · {SITE_CONFIG.contact.location}
-            </p>
           </section>
         </div>
-      </div>
+      </Container>
     </div>
   );
 }

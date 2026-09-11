@@ -10,38 +10,51 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#0f0f0f",
-        foreground: "#ffffff",
+        background: "#F5F3EA",
+        foreground: "#161616",
+        brand: {
+          warm: "#F5F3EA",
+          white: "#FFFFFF",
+          cream: "#FFF4B8",
+          dark: "#161616",
+          muted: "#555555",
+          neutral: "#EDEBE3",
+          gold: "#FCCF14",
+          burnished: "#B89A08",
+        },
         primary: {
-          DEFAULT: "#0f0f0f",
-          dark: "#0a0c10",
+          DEFAULT: "#161616",
+          light: "#262626",
         },
         secondary: {
-          DEFAULT: "#111317",
-          dark: "#0b0d10",
-        },
-        tertiary: {
-          DEFAULT: "#0f1115",
+          DEFAULT: "#555555",
+          muted: "#737373",
         },
         surface: {
-          DEFAULT: "#10141e",
-          card: "#171a20",
+          DEFAULT: "#FFFFFF",
+          cream: "#FFF4B8",
+          neutral: "#EDEBE3",
+          card: "#FFFFFF",
         },
         accent: {
-          DEFAULT: "#a3ff00",
-          hover: "#b6ff00",
-          glow: "rgba(163, 255, 0, 0.4)",
+          DEFAULT: "#FCCF14",
+          hover: "#e5ba09",
+          dark: "#B89A08",
+          subtle: "#FFF4B8",
+          glow: "rgba(252, 207, 20, 0.35)",
         },
-        brandMuted: "#5f6880",
-        textMuted: "#9ca3af",
+        brandMuted: "#555555",
+        textMuted: "#666666",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
       },
       boxShadow: {
-        "neon-glow": "0 0 25px rgba(163, 255, 0, 0.35)",
-        "neon-sm": "0 0 10px rgba(163, 255, 0, 0.25)",
-        "card-glass": "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
+        "owl-sm": "0 1px 3px rgba(22, 22, 22, 0.05)",
+        "owl-md": "0 4px 12px rgba(22, 22, 22, 0.06)",
+        "owl-lg": "0 12px 32px rgba(22, 22, 22, 0.08)",
+        "gold-glow": "0 0 25px rgba(252, 207, 20, 0.35)",
+        "card-glass": "0 8px 32px 0 rgba(22, 22, 22, 0.06)",
       },
       keyframes: {
         "pulse-glow": {

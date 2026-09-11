@@ -23,6 +23,15 @@ export function SmoothScroll({ children }: SmoothScrollProps) {
       touchMultiplier: 1.5,
     });
 
+    // Expose lenis instance globally for modal scroll lock
+    (window as unknown as { __lenis?: Lenis }).__lenis = lenis;
+
+    const handleStop = () => lenis.stop();
+    const handleStart = () => lenis.start();
+
+    window.addEventListener("owl:scroll-stop", handleStop);
+    window.addEventListener("owl:scroll-start", handleStart);
+
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -32,7 +41,10 @@ export function SmoothScroll({ children }: SmoothScrollProps) {
 
     return () => {
       cancelAnimationFrame(rafId);
+      window.removeEventListener("owl:scroll-stop", handleStop);
+      window.removeEventListener("owl:scroll-start", handleStart);
       lenis.destroy();
+      delete (window as unknown as { __lenis?: Lenis }).__lenis;
     };
   }, []);
 

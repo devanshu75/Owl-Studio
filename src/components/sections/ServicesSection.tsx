@@ -1,140 +1,147 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Sparkles, Video, Film, Code, Palette, Layout, TrendingUp } from "lucide-react";
-import { SERVICES } from "@/lib/constants";
+import { ArrowUpRight, Check, ArrowRight } from "lucide-react";
+import { SERVICES_DATA, ServiceItemData } from "@/lib/services-data";
+import { Container } from "@/components/layout/Container";
+import { motion } from "framer-motion";
 
 export function ServicesSection() {
-  const categoryIcons: Record<string, typeof Code> = {
-    Engineering: Code,
-    Design: Palette,
-    Experience: Layout,
-    Growth: TrendingUp,
-    "Creative AI": Sparkles,
-    Cinema: Film,
-    "Performance Video": Video,
-  };
+  const [activeSlug, setActiveSlug] = useState<string>(SERVICES_DATA[0].slug);
+
+  const activeService =
+    SERVICES_DATA.find((s) => s.slug === activeSlug) || SERVICES_DATA[0];
 
   return (
-    <section id="services" className="relative bg-secondary py-20 sm:py-24 lg:py-28 overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="pointer-events-none absolute top-1/3 left-0 w-96 h-96 bg-accent/5 blur-[120px] rounded-full" />
-      <div className="pointer-events-none absolute bottom-1/4 right-0 w-96 h-96 bg-accent/5 blur-[140px] rounded-full" />
-
-      <div className="mx-auto max-w-7xl px-6 sm:px-8">
+    <section className="relative bg-[#F5F3EA] py-24 sm:py-32 overflow-hidden">
+      <Container>
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-white/10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-brand-dark/10">
           <div>
-            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-accent mb-3">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-              Creative Studio Capabilities
+            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand-muted mb-3">
+              <span className="h-2 w-2 rounded-full bg-accent" />
+              Core Capabilities
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
-              Our <span className="font-serif italic font-normal text-gray-300">Services</span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-brand-dark uppercase">
+              Services We Provide
             </h2>
           </div>
-          <p className="max-w-md text-sm sm:text-base text-textMuted leading-relaxed">
-            From neural generative video and cinematic brand films to high-performance Next.js platforms.
+          <p className="max-w-md text-base text-brand-muted leading-relaxed">
+            Five synchronized disciplines designed to elevate your visual presence, digital
+            platforms, and revenue pipeline.
           </p>
         </div>
 
-        {/* Services List */}
-        <div className="divide-y divide-white/10">
-          {SERVICES.map((service) => {
-            const Icon = categoryIcons[service.category] || Sparkles;
-            return (
-              <div
-                key={service.num}
-                className="group relative py-12 sm:py-16 transition-all duration-300"
-              >
-                {/* Hover highlight background */}
-                <div className="pointer-events-none absolute inset-0 -mx-6 sm:-mx-8 rounded-2xl bg-white/[0.02] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-                <div className="relative flex flex-col lg:flex-row lg:items-start justify-between gap-8">
-                  {/* Left: Number & Category Badge */}
-                  <div className="flex lg:flex-col items-center lg:items-start gap-4 lg:gap-2">
-                    <span className="font-mono text-xl sm:text-2xl font-bold text-accent">
-                      {service.num} —
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[11px] font-medium text-gray-300">
-                      <Icon className="h-3 w-3 text-accent" />
-                      {service.category}
-                    </span>
-                  </div>
-
-                  {/* Center: Title, Description, Deliverables & Tags */}
-                  <div className="flex-1 max-w-3xl">
-                    <div className="flex flex-wrap items-center gap-3">
-                      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white transition-colors duration-200 group-hover:text-accent">
-                        {service.name}
-                      </h3>
-                      {service.aspectBadge && (
-                        <span className="rounded-md border border-accent/30 bg-accent/10 px-2.5 py-0.5 font-mono text-[11px] font-semibold text-accent">
-                          {service.aspectBadge}
+        {/* Interactive Editorial Services Matrix */}
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          {/* Left: Large Interactive Numbered Rows (7 cols) */}
+          <div className="lg:col-span-7 divide-y divide-brand-dark/10">
+            {SERVICES_DATA.map((service) => {
+              const isActive = service.slug === activeSlug;
+              return (
+                <div
+                  key={service.slug}
+                  onMouseEnter={() => setActiveSlug(service.slug)}
+                  className={`group py-8 sm:py-10 transition-all duration-300 cursor-pointer ${
+                    isActive ? "opacity-100" : "opacity-60 hover:opacity-100"
+                  }`}
+                >
+                  <div className="flex items-start justify-between gap-6">
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-4">
+                        <span className="font-mono text-sm sm:text-base font-bold text-accent-dark">
+                          {service.num} —
                         </span>
-                      )}
+                        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-brand-dark tracking-tight transition-colors group-hover:text-brand-dark">
+                          {service.title}
+                        </h3>
+                      </div>
+                      <p className="text-sm sm:text-base text-brand-muted max-w-xl pl-10 sm:pl-12">
+                        {service.shortDescription}
+                      </p>
                     </div>
 
-                    <p className="mt-4 text-base sm:text-lg text-textMuted leading-relaxed">
-                      {service.description}
-                    </p>
-
-                    {/* Deliverables Bullet highlights */}
-                    <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-gray-300">
-                      {service.deliverables.map((item) => (
-                        <div key={item} className="flex items-center gap-2">
-                          <Sparkles className="h-3 w-3 text-accent shrink-0" />
-                          <span>{item}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Skill Badges */}
-                    <div className="mt-6 flex flex-wrap gap-2">
-                      {service.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-gray-300 transition-colors group-hover:border-accent/30 group-hover:text-white"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Right: Circular CTA action */}
-                  <div className="self-end lg:self-center">
                     <Link
-                      href="/#contact"
-                      className="flex h-14 w-14 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-all duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-black group-hover:scale-110"
-                      aria-label={`Inquire about ${service.name}`}
+                      href={`/services/${service.slug}`}
+                      className="shrink-0 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-brand-dark/15 bg-white text-brand-dark transition-all duration-300 group-hover:border-accent group-hover:bg-accent group-hover:scale-105"
+                      aria-label={`Explore ${service.title}`}
                     >
-                      <ArrowUpRight className="h-6 w-6 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      <ArrowUpRight className="h-5 w-5" />
                     </Link>
                   </div>
                 </div>
+              );
+            })}
+          </div>
+
+          {/* Right: Live Dynamic Detail Panel (5 cols) */}
+          <div className="lg:col-span-5 sticky top-28">
+            <motion.div
+              key={activeService.slug}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.35 }}
+              className="rounded-3xl border border-brand-dark/10 bg-white p-8 sm:p-10 shadow-owl-md"
+            >
+              <div className="inline-block rounded-full bg-brand-cream border border-brand-dark/10 px-3 py-1 text-xs font-semibold text-brand-dark mb-4">
+                Service Focus · {activeService.num}
               </div>
-            );
-          })}
+
+              <h4 className="text-2xl font-black text-brand-dark tracking-tight">
+                {activeService.title}
+              </h4>
+
+              <p className="mt-4 text-sm text-brand-muted leading-relaxed">
+                {activeService.description}
+              </p>
+
+              <div className="mt-6 pt-6 border-t border-brand-dark/10">
+                <div className="text-xs font-bold uppercase tracking-wider text-brand-dark mb-3">
+                  Key Deliverables
+                </div>
+                <ul className="space-y-2.5">
+                  {activeService.deliverables.slice(0, 4).map((d) => (
+                    <li
+                      key={d}
+                      className="flex items-start gap-2.5 text-xs sm:text-sm text-brand-dark/80"
+                    >
+                      <div className="h-4 w-4 rounded-full bg-accent/30 flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="h-2.5 w-2.5 text-brand-dark stroke-[3]" />
+                      </div>
+                      <span>{d}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-brand-dark/10 flex items-center justify-between">
+                <Link
+                  href={`/services/${activeService.slug}`}
+                  className="inline-flex items-center gap-2 text-sm font-bold text-brand-dark hover:text-accent-dark transition-colors group"
+                >
+                  <span>Read Full Capability Deep Dive</span>
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </motion.div>
+          </div>
         </div>
 
-        {/* Section Footer */}
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-white/10 pt-8">
-          <Link
-            href="/#contact"
-            className="inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 font-semibold text-black transition-all duration-300 hover:bg-accent hover:shadow-neon-sm hover:scale-105"
-          >
-            <span>Start a project</span>
-            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-black text-white">
-              <ArrowUpRight className="h-3.5 w-3.5" />
-            </div>
-          </Link>
-
-          <span className="text-xs sm:text-sm font-mono tracking-wider text-textMuted uppercase">
-            07 Bespoke Studio Disciplines · Available Worldwide
+        {/* Bottom Hub CTA */}
+        <div className="mt-16 pt-8 border-t border-brand-dark/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <span className="text-sm text-brand-muted font-medium">
+            Looking for an integrated multi-channel scope?
           </span>
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 text-sm font-bold text-brand-dark hover:text-accent-dark transition-colors"
+          >
+            <span>Explore All 5 Services in Detail</span>
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

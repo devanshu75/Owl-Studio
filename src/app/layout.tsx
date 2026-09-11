@@ -6,7 +6,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 import { SmoothScroll } from "@/components/ui/SmoothScroll";
-import { SITE_CONFIG } from "@/lib/constants";
+import { SITE_CONFIG, getCanonicalUrl } from "@/lib/constants";
+import { getWebSiteSchema, getProfessionalServiceSchema } from "@/lib/schema";
 import "./globals.css";
 
 const inter = Inter({
@@ -17,7 +18,7 @@ const inter = Inter({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0f1115",
+  themeColor: "#F5F3EA",
   width: "device-width",
   initialScale: 1,
 };
@@ -57,7 +58,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: SITE_CONFIG.url,
+    url: getCanonicalUrl(),
     siteName: SITE_CONFIG.name,
     title: SITE_CONFIG.title,
     description: "We build bold brands and scalable digital experiences through strategy, design, and Next.js engineering.",
@@ -93,25 +94,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const jsonLd = {
+  const schemaGraph = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "Owl Studio",
-    url: SITE_CONFIG.url,
-    logo: `${SITE_CONFIG.url}/images/logo.svg`,
-    image: `${SITE_CONFIG.url}/images/og-image.jpg`,
-    description: SITE_CONFIG.description,
-    telephone: SITE_CONFIG.contact.phone,
-    email: SITE_CONFIG.contact.email,
-    address: {
-      "@type": "PostalAddress",
-      addressCountry: "IN",
-    },
-    sameAs: SITE_CONFIG.socials.map((s) => s.href),
+    "@graph": [getWebSiteSchema(), getProfessionalServiceSchema()],
   };
 
   return (
-    <html lang="en" className={`dark ${inter.variable}`}>
+    <html lang="en" className={inter.variable}>
       <head>
         {/* Google Tag Manager */}
         <script
@@ -136,13 +125,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             gtag('config', 'G-QH9R0EH7WG');
           `}
         </Script>
-        {/* Structured Data */}
+        {/* Structured Data (WebSite + ProfessionalService) */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
         />
       </head>
-      <body className="bg-primary text-white font-sans antialiased selection:bg-accent selection:text-black">
+      <body className="bg-background text-foreground font-sans antialiased selection:bg-accent selection:text-brand-dark min-h-screen">
+        {/* Accessible Skip to Content Link */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[99999] focus:rounded-full focus:bg-accent focus:px-5 focus:py-2.5 focus:text-brand-dark focus:font-bold focus:shadow-owl-md focus:outline-none"
+        >
+          Skip to content
+        </a>
+
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -155,18 +152,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <SmoothScroll>
           <div className="flex min-h-screen flex-col">
             <Navbar />
-            <main className="flex-1">{children}</main>
+            <main id="main-content" className="flex-1">{children}</main>
             <Footer />
           </div>
           <CustomCursor />
           <Toaster
-            theme="dark"
+            theme="light"
             position="bottom-right"
             toastOptions={{
               style: {
-                background: "#171a20",
-                color: "#ffffff",
-                border: "1px solid rgba(255, 255, 255, 0.1)",
+                background: "#FFFFFF",
+                color: "#161616",
+                border: "1px solid rgba(22, 22, 22, 0.1)",
               },
             }}
           />
